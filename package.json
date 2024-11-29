@@ -2,7 +2,7 @@
   "name": "@blooo/zemu",
   "author": "Zondax GmbH",
   "license": "Apache-2.0",
-  "version": "0.52.1",
+  "version": "0.52.2",
   "description": "Zemu Testing Framework",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
