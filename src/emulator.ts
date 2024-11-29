@@ -89,7 +89,8 @@ export default class EmuContainer {
           throw err;
         }
 
-        docker.modem.followProgress(stream, onFinished, onProgress);
+        docker.modem.followProgress(
+            stream as NodeJS.ReadableStream, onFinished, onProgress);
       });
     });
   }
