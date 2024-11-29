@@ -28,7 +28,6 @@ export default class EmuContainer {
   private readonly elfLocalPath: string;
   private readonly name: string;
   private readonly image: string;
-  private readonly ghcrImage: string;
   private readonly libElfs: Record<string, string>;
   private currentContainer?: Container;
 
@@ -40,7 +39,6 @@ export default class EmuContainer {
     this.libElfs = libElfs;
     this.name = name;
     this.logging = false;
-    this.ghcrImage = `ghcr.io/${image}`;
   }
 
   static killContainerByName(name: string): void {
@@ -89,7 +87,8 @@ export default class EmuContainer {
           throw err;
         }
 
-        docker.modem.followProgress(stream, onFinished, onProgress);
+        docker.modem.followProgress(
+            stream as NodeJS.ReadableStream, onFinished, onProgress);
       });
     });
   }
@@ -150,7 +149,7 @@ export default class EmuContainer {
 
     this.log(`[ZEMU] Creating Container ${this.image} - ${this.name} `);
     this.currentContainer = await docker.createContainer({
-      Image: this.ghcrImage,
+      Image: this.image,
       name: this.name,
       Tty: true,
       AttachStdout: true,
