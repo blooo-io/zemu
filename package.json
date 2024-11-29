@@ -7,10 +7,10 @@
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "types": "./dist/index.d.ts",
-  "homepage": "https://github.com/zondax/zemu",
+  "homepage": "https://github.com/blooo-io/zemu",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zondax/zemu.git"
+    "url": "git+https://github.com/blooo-io/zemu.git"
   },
   "keywords": [
     "Zondax",
@@ -28,7 +28,7 @@
     "format": "prettier --write ."
   },
   "bugs": {
-    "url": "https://github.com/zondax/zemu/issues"
+    "url": "https://github.com/blooo-io/zemu/issues"
   },
   "dependencies": {
     "@grpc/grpc-js": "^1.11.1",
