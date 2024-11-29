@@ -50,6 +50,6 @@ jobs:
       - name: Update tag
         run: npm --no-git-tag-version version ${{ steps.get_version.outputs.version }}
       - name: Publish package
-        run: npm publish
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN_PUBLISH_AUTO_GLOBAL }}
